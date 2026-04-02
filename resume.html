@@ -8,58 +8,75 @@
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: #f5f7fa;
+      background: linear-gradient(120deg, #fdfbfb, #ebedee);
       color: #333;
     }
 
     header {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 60px 20px 30px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 36px;
+      font-size: 40px;
+      letter-spacing: 2px;
     }
 
     header p {
+      color: #777;
       margin-top: 10px;
-      opacity: 0.9;
     }
 
     .container {
-      max-width: 1000px;
-      margin: 20px auto;
+      max-width: 1100px;
+      margin: auto;
       padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+    }
+
+    .left, .right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     .card {
       background: white;
-      border-radius: 12px;
+      border-radius: 20px;
       padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: 0.3s;
     }
 
-    .card h2 {
-      border-left: 5px solid #667eea;
-      padding-left: 10px;
+    .card:hover {
+      transform: translateY(-5px);
     }
 
-    /* 照片樣式 */
     .profile {
       text-align: center;
     }
 
     .profile img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      border: 4px solid #667eea;
-      margin-bottom: 10px;
+      object-fit: cover;
+      border: 5px solid #667eea;
+      transition: 0.4s;
+    }
+
+    .profile img:hover {
+      transform: scale(1.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 20px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
     }
 
     .skills span {
@@ -68,85 +85,96 @@
       color: white;
       padding: 6px 12px;
       border-radius: 20px;
-      margin: 5px;
-      font-size: 14px;
+      margin: 5px 5px 0 0;
+      font-size: 13px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #764ba2;
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
+      background: #667eea;
       color: white;
       border-radius: 20px;
-      text-decoration: none;
       cursor: pointer;
-      transition: 0.3s;
     }
 
     .btn:hover {
-      background: #5a3d85;
+      background: #4f5bd5;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 14px;
-      color: #888;
+      font-size: 13px;
+      color: #999;
+    }
+
+    /* 手機版 */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>我的個人履歷</h1>
-  <p>亞洲大學學生 | 學號：1114024065</p>
+  <h1>王逸璇</h1>
+  <p>亞洲大學 | 學號 1114024065</p>
 </header>
 
 <div class="container">
 
-  <!-- 照片區 -->
-  <div class="card profile">
-    <img src="images/IMG_9851.jpg" alt="個人照片">
-    <p>王逸璇</p>
-  </div>
+  <div class="left">
 
-  <div class="card">
-    <h2>基本資料</h2>
-    <p><strong>姓名：</strong>王逸璇</p>
-    <p><strong>學校：</strong>亞洲大學</p>
-    <p><strong>學號：</strong>1114024065</p>
-    <p><strong>Email：</strong>ihsuan1202@email.com</p>
-  </div>
-
-  <div class="card">
-    <h2>自我介紹</h2>
-    <p id="intro">我是一名積極學習的學生，對網頁設計與創意開發有濃厚興趣。</p>
-    <button class="btn" onclick="changeIntro()">換一句自我介紹</button>
-  </div>
-
-  <div class="card">
-    <h2>技能</h2>
-    <div class="skills">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>設計</span>
+    <div class="card profile">
+      <img src="images/IMG_9851.jpg" alt="個人照片">
+      <h3>王逸璇</h3>
     </div>
+
+    <div class="card">
+      <h2>基本資料</h2>
+      <p>Email：ihsuan1202@email.com</p>
+      <p>學校：亞洲大學</p>
+    </div>
+
+    <div class="card">
+      <h2>技能</h2>
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>設計</span>
+      </div>
+    </div>
+
   </div>
 
-  <div class="card">
-    <h2>經歷</h2>
-    <ul>
-      <li>校內專題製作</li>
-      <li>網頁設計課程作品</li>
-      <li>團隊合作專案</li>
-    </ul>
+  <div class="right">
+
+    <div class="card">
+      <h2>自我介紹</h2>
+      <p id="intro">我是一名積極學習的學生，對網頁設計與創意開發有濃厚興趣。</p>
+      <button class="btn" onclick="changeIntro()">換一句</button>
+    </div>
+
+    <div class="card">
+      <h2>經歷</h2>
+      <ul>
+        <li>校內專題製作</li>
+        <li>網頁設計課程作品</li>
+        <li>團隊合作專案</li>
+      </ul>
+    </div>
+
   </div>
 
 </div>
 
 <footer>
-  © 2026 個人履歷
+  © 2026 Resume
 </footer>
 
 <script>
@@ -154,7 +182,8 @@
     const texts = [
       "我喜歡學習新技術並挑戰自己。",
       "我對設計與程式充滿熱情。",
-      "我擅長團隊合作與問題解決。"
+      "我擅長團隊合作與問題解決。",
+      "我持續提升自我，追求更好的作品品質。"
     ];
 
     const random = Math.floor(Math.random() * texts.length);
