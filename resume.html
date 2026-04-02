@@ -120,6 +120,7 @@
 </head>
 <body>
 
+
 <header>
   <h1>王逸璇</h1>
   <p>亞洲大學 | 學號 1114024065</p>
@@ -167,6 +168,24 @@
         <li>網頁設計課程作品</li>
         <li>團隊合作專案</li>
       </ul>
+      <audio id="bgm" autoplay loop playsinline>
+  <source src="audio/music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const audio = document.getElementById("bgm");
+
+  // 嘗試直接播放
+  audio.play().catch(() => {
+    // 若被擋，快速解除靜音再播放
+    audio.muted = true;
+    audio.play();
+
+    setTimeout(() => {
+      audio.muted = false;
+    }, 100);
+  });
+</script>
     </div>
 
   </div>
