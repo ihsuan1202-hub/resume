@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人履歷</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      border-left: 5px solid #667eea;
+      padding-left: 10px;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: #667eea;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #764ba2;
+      color: white;
+      border-radius: 20px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #5a3d85;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>我的個人履歷</h1>
+  <p>亞洲大學學生 | 學號：1114024065</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>基本資料</h2>
+    <p><strong>姓名：</strong>（請填寫）</p>
+    <p><strong>學校：</strong>亞洲大學</p>
+    <p><strong>學號：</strong>1114024065</p>
+    <p><strong>Email：</strong>example@email.com</p>
+  </div>
+
+  <div class="card">
+    <h2>自我介紹</h2>
+    <p id="intro">我是一名積極學習的學生，對網頁設計與創意開發有濃厚興趣。</p>
+    <button class="btn" onclick="changeIntro()">換一句自我介紹</button>
+  </div>
+
+  <div class="card">
+    <h2>技能</h2>
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>設計</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>經歷</h2>
+    <ul>
+      <li>校內專題製作</li>
+      <li>網頁設計課程作品</li>
+      <li>團隊合作專案</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 個人履歷
+</footer>
+
+<script>
+  function changeIntro() {
+    const texts = [
+      "我喜歡學習新技術並挑戰自己。",
+      "我對設計與程式充滿熱情。",
+      "我擅長團隊合作與問題解決。"
+    ];
+
+    const random = Math.floor(Math.random() * texts.length);
+    document.getElementById("intro").innerText = texts[random];
+  }
+</script>
+
+</body>
+</html>
