@@ -110,7 +110,6 @@
       color: #999;
     }
 
-    /* 手機版 */
     @media (max-width: 768px) {
       .container {
         grid-template-columns: 1fr;
@@ -119,7 +118,6 @@
   </style>
 </head>
 <body>
-
 
 <header>
   <h1>王逸璇</h1>
@@ -133,13 +131,16 @@
     <div class="card profile">
       <img src="images/IMG_9851.jpg" alt="個人照片">
       <h3>王逸璇</h3>
+      <p style="color:#777; font-size:14px;">大學生 / 網頁設計學習者</p>
     </div>
 
     <div class="card">
       <h2>基本資料</h2>
-      <p>Email：ihsuan1202@email.com</p>
-      <p>學校：亞洲大學</p>
-      <p>學號：1114024065</p>
+      <p><strong>Email：</strong>ihsuan1202@email.com</p>
+      <p><strong>學校：</strong>亞洲大學</p>
+      <p><strong>學號：</strong>1114024065</p>
+      <p><strong>居住地：</strong>台灣</p>
+      <p><strong>語言能力：</strong>中文 / 基礎英文</p>
     </div>
 
     <div class="card">
@@ -149,7 +150,14 @@
         <span>CSS</span>
         <span>JavaScript</span>
         <span>設計</span>
+        <span>Photoshop</span>
+        <span>團隊合作</span>
       </div>
+    </div>
+
+    <div class="card">
+      <h2>興趣</h2>
+      <p>🎬 影片剪輯、📷 攝影、🎨 視覺設計、🌏 旅行探索</p>
     </div>
 
   </div>
@@ -158,18 +166,31 @@
 
     <div class="card">
       <h2>自我介紹</h2>
-      <p id="intro">我是一名積極學習的學生，對網頁設計與創意開發有濃厚興趣。</p>
+      <p id="intro">我是一名積極學習的學生，對網頁設計與創意開發有濃厚興趣，喜歡把想法轉換成實際作品。</p>
       <button class="btn" onclick="changeIntro()">換一句</button>
+    </div>
+
+    <div class="card">
+      <h2>學習目標</h2>
+      <p>希望能提升前端開發能力，並建立屬於自己的作品集網站，未來朝網頁設計或產品設計發展。</p>
     </div>
 
     <div class="card">
       <h2>經歷</h2>
       <ul>
-        <li>校內專題製作</li>
-        <li>網頁設計課程作品</li>
-        <li>團隊合作專案</li>
+        <li>校內專題製作（網站設計與規劃）</li>
+        <li>網頁設計課程作品（HTML/CSS/JS實作）</li>
+        <li>團隊合作專案（分工與溝通）</li>
+        <li>簡單UI設計練習與版型切版</li>
       </ul>
-      
+    </div>
+
+    <div class="card">
+      <h2>個人特質</h2>
+      <p>✔ 樂於學習新事物<br>
+         ✔ 喜歡解決問題<br>
+         ✔ 重視細節與美感<br>
+         ✔ 能夠與團隊良好溝通</p>
     </div>
 
   </div>
@@ -183,16 +204,17 @@
 <script>
   function changeIntro() {
     const texts = [
-      "我喜歡學習新技術並挑戰自己。",
-      "我對設計與程式充滿熱情。",
-      "我擅長團隊合作與問題解決。",
-      "我持續提升自我，追求更好的作品品質。"
+      "我喜歡學習新技術並挑戰自己，享受完成作品的成就感。",
+      "我對設計與程式充滿熱情，希望做出有質感的作品。",
+      "我擅長團隊合作與問題解決，也樂於分享想法。",
+      "我持續提升自我，追求更好的作品品質與能力成長。"
     ];
 
     const random = Math.floor(Math.random() * texts.length);
     document.getElementById("intro").innerText = texts[random];
   }
 </script>
+
 <audio id="bgm" autoplay loop playsinline>
   <source src="audio/music.mp3" type="audio/mpeg">
 </audio>
@@ -200,9 +222,7 @@
 <script>
   const audio = document.getElementById("bgm");
 
-  // 嘗試直接播放
   audio.play().catch(() => {
-    // 若被擋，快速解除靜音再播放
     audio.muted = true;
     audio.play();
 
@@ -211,6 +231,6 @@
     }, 100);
   });
 </script>
-<!--音樂來源：suno.ai-->
+
 </body>
 </html>
